@@ -8,11 +8,16 @@ import {
   IonSelectOption,
   IonSelect,
   IonItem,
-  IonContent,
   IonHeader,
+  IonIcon,
   IonTitle,
   IonToolbar,
   IonButton,
+  IonContent,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardContent,
 } from '@ionic/angular/standalone';
 import { NumericValueAccessor } from '@ionic/angular';
 
@@ -27,6 +32,7 @@ import { NumericValueAccessor } from '@ionic/angular';
     IonSelectOption,
     IonSelect,
     IonItem,
+    IonIcon,
     IonContent,
     IonHeader,
     IonTitle,
@@ -34,6 +40,11 @@ import { NumericValueAccessor } from '@ionic/angular';
     CommonModule,
     FormsModule,
     IonButton,
+    IonContent,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardContent,
   ]
 })
 export class MinerPage implements OnInit {

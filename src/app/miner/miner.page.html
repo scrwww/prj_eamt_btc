@@ -1,39 +1,79 @@
-<ion-header [translucent]="true">
+<ion-header translucent="true">
   <ion-toolbar>
-    <ion-title>Miner</ion-title>
+    <ion-title>Mineração</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Miner</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <main>
-    <section>
-      <h1>Explicação sobre a Mineração de Criptomoedas</h1>
-      <article>
-        <p>O processo de mineraçãoi começa com as transações sendo enviadas à rede e agrupadas em um bloco pelos mineradores. Cada bloco contém uma referência criptográfica ao bloco anterior, formando uma corrente continua e segura, daí o nome "blockchain"</p>
-        <p>Para adicionar um bloco à cadeia, os mineradores devem encontrar o nome correto que resolve o problema matemático associado ao bloco.</p>
-        <p>O primeiro minerador que resolver o problema e validar o bloco é recompensado com uma quantidade especifica do ativo virtual, como um metodo de incentivar a mineração e a manutenção da rede.</p>
-        <p>Uma vez que um bloco é minerado, as transações contidas nele são consideradas validadas. Este bloco é então adicionado ao blockchain público, onde todas as transações são acessíveis e verificáveis por qualquer pessoa na rede.</p>
-      </article>
-      <article>
-        <h2>O que é Blockchain</h2>
-        <p>A BlockChain é um código de acesso publico que toda a BitCoin se baseia, todas transições confirmadas, aumentando a segurança para garantir que a pessoa com a BitCoin realmente seja o dono e ela exista.</p>
-        <p>Uma transação é requerida/ativada -> Um bloco que representa a transação é criado -> O Bloco é enviado para todos os "nós" a network -> Os "nós" validam a transação -> Os "nós" recebem recompensas pelo trabalho -> Um bloco é adicionado para a blockchain existente -> Transação completa</p>
-      </article>
-      <article>
-        <h2>Simulação de Mineração</h2>
-        <p>A simulação funciona de uma forma diferente mas parecida com a mineração de Criptomoedas, neste caso, ela só pega uma parte da blockchain em vez de realizar o processo todo (pois o processo todo demoraria tempo demais)</p>
-        <p>Ela é feita usando um valor baseado na dificuldade, então caso coloque dificuldade igual o resultado ainda será igual, pois o "hash", que é uma parte da blockchain, não muda na própria dificuldade</p>
-      </article>
-    </section>
-    <section>
-      <article> 
+<ion-content fullscreen="true">
+
+  <section class="hero">
+    <h1>Como funciona a Mineração?</h1>
+    <p>Entenda o processo por trás da segurança e funcionamento das criptomoedas.</p>
+  </section>
+
+  <div class="container">
+
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>
+          <ion-icon name="hammer-outline"></ion-icon>
+          Processo de Mineração
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>O processo de mineração começa com as transações sendo enviadas à rede e agrupadas em um bloco pelos mineradores. Cada bloco contém uma referência criptográfica ao bloco anterior, formando uma cadeia segura — a blockchain.</p>
+        <p>Para adicionar um bloco à cadeia, os mineradores devem resolver um problema matemático complexo. O primeiro minerador que encontra a solução válida recebe uma recompensa.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>
+          <ion-icon name="link-outline"></ion-icon>
+          O que é Blockchain?
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>A blockchain é um livro-razão público que registra todas as transações confirmadas. Seu formato descentralizado garante segurança e transparência.</p>
+        <ul>
+          <li>Transação criada</li>
+          <li>Bloco formado</li>
+          <li>Bloco enviado aos nós</li>
+          <li>Nós validam a operação</li>
+          <li>Novo bloco é adicionado à cadeia</li>
+        </ul>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>
+          <ion-icon name="code-working-outline"></ion-icon>
+          Simulação de Mineração
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>A simulação reproduz parcialmente o processo de mineração real, focando a busca por um hash que respeite a dificuldade definida.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="action-card">
+      <ion-card-header>
+        <ion-card-title>
+          <ion-icon name="settings-outline"></ion-icon>
+          Configurações da Simulação
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+
         <ion-item>
-          <ion-select id="lblDiff" label="Dificuldade do Hash" placeholder="1" (ionChange)="selectDiff($event)">
+          <ion-select
+            id="lblDiff"
+            label="Dificuldade do Hash"
+            placeholder="1"
+            (ionChange)="selectDiff($event)"
+          >
             <ion-select-option value="1">1</ion-select-option>
             <ion-select-option value="2">2</ion-select-option>
             <ion-select-option value="3">3</ion-select-option>
@@ -42,17 +82,30 @@
             <ion-select-option value="6">6</ion-select-option>
           </ion-select>
         </ion-item>
-        <ion-checkbox [(ngModel)]="ativarExemplo" *ngIf="diffBaixa">Ativar visualização em Tempo Real?</ion-checkbox>
-        <ion-checkbox [(ngModel)]="ativarExemploDiff" *ngIf="diffAlta">Certeza em ativar a visualização em Tempo Real??<br>Aviso, o tempo de resposta será drasticamente reduzido</ion-checkbox>
-      </article>
-      <article>
-        <ion-button id="btnMinerExample" (click)="minerar()" [disabled]="isMining">Iniciar Mineração</ion-button>
-        <ion-button id="btnMinerRestart" (click)="resetNonce()">Começar da Primeira Tentativa?</ion-button>
-        <div id="outputFinDiv" [innerHTML]="outputFin">{{outputFin}}</div>
-        <div id="containerOutput">
-          <div id="outputBetDiv" [innerHTML]="outputBet">{{outputBet}}</div>
-        </div>
-      </article>
-    </section>
- </main>
+
+        <ion-checkbox [(ngModel)]="ativarExemplo" *ngIf="diffBaixa">
+          Ativar visualização em tempo real?
+        </ion-checkbox>
+
+        <ion-checkbox [(ngModel)]="ativarExemploDiff" *ngIf="diffAlta">
+          <b>Cuidado:</b> visualização em tempo real pode deixar o processo lento.
+        </ion-checkbox>
+
+        <ion-button expand="block" shape="round" color="primary" (click)="minerar()" [disabled]="isMining">
+          Iniciar Mineração
+        </ion-button>
+
+        <ion-button expand="block" shape="round" fill="outline" color="primary" (click)="resetNonce()">
+          Reiniciar Tentativas
+        </ion-button>
+
+        <div class="output shadow" [innerHTML]="outputFin">{{outputFin}}</div>
+
+        <div class="output shadow" [innerHTML]="outputBet">{{outputBet}}</div>
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
 </ion-content>

@@ -1,18 +1,64 @@
-<ion-header [translucent]="true">
+<ion-header translucent="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>CCoin</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content fullscreen="true">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Bem-vindo ao CCoin</h1>
+      <p>Um ambiente educativo para entender e explorar o mundo das criptomoedas.</p>
+    </div>
+  </section>
 
-  <div id="container">
+  <ion-card class="intro-card">
+    <ion-card-header>
+      <ion-card-title>Por que criptomoedas importam?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        As criptomoedas revolucionaram a forma como o mundo entende dinheiro. 
+        Elas permitem transações rápidas, seguras e sem intermediários, garantindo 
+        mais liberdade e autonomia ao usuário.
+      </p>
+      <p>
+        Além disso, a tecnologia por trás delas — a <b>blockchain</b> — trouxe novos
+        níveis de transparência, descentralização e inovação para diversas áreas
+        como finanças, contratos digitais e segurança de dados.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="features-card">
+    <ion-card-header>
+      <ion-card-title>O que você encontrará aqui</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item lines="none">
+          <ion-icon name="cube-outline" slot="start"></ion-icon>
+          <ion-label>Aprenda como blocos são minerados</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon name="stats-chart-outline" slot="start"></ion-icon>
+          <ion-label>Simule operações no mercado</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon name="shield-checkmark-outline" slot="start"></ion-icon>
+          <ion-label>Entenda segurança e descentralização</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="start-buttons">
+    <ion-button routerLink="/miner" expand="block" shape="round" color="primary">
+      Iniciar Mineração
+    </ion-button>
+
+    <ion-button routerLink="/tracker" expand="block" shape="round" fill="outline" color="primary">
+      Ir para Simulação de Mercado
+    </ion-button>
   </div>
 </ion-content>
