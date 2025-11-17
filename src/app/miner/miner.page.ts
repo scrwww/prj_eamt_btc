@@ -13,9 +13,6 @@ import {
   IonTitle,
   IonToolbar,
   IonButton,
-  IonCard,
-  IonCardContent,
-  IonInput,
 } from '@ionic/angular/standalone';
 import { NumericValueAccessor } from '@ionic/angular';
 
@@ -37,9 +34,6 @@ import { NumericValueAccessor } from '@ionic/angular';
     CommonModule,
     FormsModule,
     IonButton,
-    IonCard,
-    IonCardContent,
-    IonInput,
   ]
 })
 export class MinerPage implements OnInit {

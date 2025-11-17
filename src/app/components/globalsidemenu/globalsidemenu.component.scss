@@ -8,8 +8,13 @@ div {
 
 ion-img {
     width: 100px;
-    filter: brightness(0);
+    
+    stroke: white;
 
+}
+
+.logo h1 {
+    color: white;
 }
 
 ion-menu, ion-menu *{
