@@ -13,5 +13,9 @@ export const routes: Routes = [
   {
     path: 'tracker',
     loadComponent: () => import('./pages/tracker/tracker.page').then( m => m.TrackerPage)
+  },  {
+    path: 'miner',
+    loadComponent: () => import('./miner/miner.page').then( m => m.MinerPage)
   },
+
 ];
